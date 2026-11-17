@@ -32,6 +32,8 @@
 [ext_resource type="PackedScene" uid="uid://db68qbx4glf3e" path="res://scenes/base/hud.tscn" id="30_hud_scn"]
 [ext_resource type="Script" uid="uid://cmqwm1ecqdrn7" path="res://scenes/base/marquitos_temporal.gd" id="31_marq_tmp_gd"]
 [ext_resource type="Script" uid="uid://dp8wdrke1eorr" path="res://scenes/base/debug_teclas.gd" id="32_dbg_gd"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="33_joystick"]
+[ext_resource type="Script" path="res://scenes/base/touch_controls.gd" id="34_touch_gd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3v01"]
 texture = ExtResource("1_eevqj")
@@ -1158,3 +1160,24 @@ script = ExtResource("31_marq_tmp_gd")
 
 [node name="DebugTeclas" type="Node" parent="." unique_id=1900000012]
 script = ExtResource("32_dbg_gd")
+
+[node name="TouchControls" type="CanvasLayer" parent="." unique_id=1900000013]
+layer = 100
+script = ExtResource("34_touch_gd")
+
+[node name="VirtualJoystick" parent="TouchControls" unique_id=1900000014 instance=ExtResource("33_joystick")]
+
+[node name="BotonInteractuar" type="Button" parent="TouchControls" unique_id=1900000015]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -228.0
+offset_top = -228.0
+offset_right = -48.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "E"
